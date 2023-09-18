@@ -13,7 +13,7 @@ export default function Header() {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<header className="p-5 px-4 flex justify-between items-center lg:w-[90%] mx-auto">
+		<header className="p-5 px-4 flex justify-between items-center lg:w-[90%] mx-auto lg:px-0 xl:w-[80%]">
 			<Link
 				href="/"
 				className=""
@@ -42,10 +42,10 @@ export default function Header() {
 						priority
 					/>
 				</button>
-				<ul className="space-y-3 mt-6 lg:mt-0 lg:space-y-0 lg:flex lg:gap-4">
+				<ul className="space-y-3 mt-6 lg:mt-0 lg:space-y-0 lg:flex lg:gap-5 xl:gap-6">
 					{links.map((link) => (
 						<li
-							className="text-lg text-altGray-800 font-medium lg:text-sm"
+							className="text-lg text-altGray-800 font-medium lg:text-sm xl:p-2"
 							key={link}
 						>
 							{link}
@@ -72,7 +72,9 @@ export default function Header() {
 				aria-roledescription="Full screen div which serves as a trigger for closing the open navigation menu"
 				tabIndex={0}
 				onClick={toggleNav}
-				className={`absolute inset-0 bg-black/50 z-[1] ${isOpen ? 'translate-x-0' : 'translate-x-[-100%]'} lg:hidden`}
+				className={`absolute inset-0 bg-black/50 z-[1] ${
+					isOpen ? 'translate-x-0' : 'translate-x-[-100%]'
+				} hidden sm:block lg:hidden`}
 			/>
 			<div className="flex items-center gap-6">
 				<div className="space-x-5 hidden sm:flex">
