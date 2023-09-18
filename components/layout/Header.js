@@ -7,13 +7,13 @@ import Image from 'next/image';
 
 export default function Header() {
 	const links = ['Products', 'Solutions', 'Developers', 'Company', 'Learn'];
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleNav = () => {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<header className="p-5 px-4 flex justify-between items-center">
+		<header className="p-5 px-4 flex justify-between items-center lg:w-[90%] mx-auto">
 			<Link
 				href="/"
 				className=""
@@ -28,31 +28,31 @@ export default function Header() {
 			<nav
 				className={`${
 					isOpen ? 'translate-x-0' : 'translate-x-[-100%]'
-				} absolute inset-0 bg-white transition duration-500 flex flex-col py-9 px-6`}
+				} absolute inset-0 bg-white transition duration-500 flex flex-col py-8 px-6 sm:w-[58%] z-[2] lg:translate-x-[0] lg:block lg:relative lg:w-fit lg:p-0 lg:bg-transparent`}
 			>
 				<button
 					onClick={toggleNav}
 					type="button"
-					className="flex items-center justify-center self-end"
+					className="flex items-center justify-center self-end lg:hidden"
 				>
 					<Image
 						src={close}
-						className="w-5"
+						className="w-6"
 						alt="hamburger menu button to toggle navigation"
 						priority
 					/>
 				</button>
-				<ul className="space-y-3 mt-7">
+				<ul className="space-y-3 mt-6 lg:mt-0 lg:space-y-0 lg:flex lg:gap-4">
 					{links.map((link) => (
 						<li
-							className="text-lg text-altGray-800 font-medium"
+							className="text-lg text-altGray-800 font-medium lg:text-sm"
 							key={link}
 						>
 							{link}
 						</li>
 					))}
 				</ul>
-				<div className="gap-4 mt-6 flex">
+				<div className="gap-4 mt-6 flex sm:hidden">
 					<Link
 						href=""
 						className="py-3 px-5 text-altGray-600 w-1/2 text-center font-medium bg-gray100 rounded-lg"
@@ -67,8 +67,15 @@ export default function Header() {
 					</Link>
 				</div>
 			</nav>
+			<div
+				role="button"
+				aria-roledescription="Full screen div which serves as a trigger for closing the open navigation menu"
+				tabIndex={0}
+				onClick={toggleNav}
+				className={`absolute inset-0 bg-black/50 z-[1] ${isOpen ? 'translate-x-0' : 'translate-x-[-100%]'} lg:hidden`}
+			/>
 			<div className="flex items-center gap-6">
-				<div className="space-x-5 hidden md:block">
+				<div className="space-x-5 hidden sm:flex">
 					<Link
 						href=""
 						className="py-3 px-5 text-altGray-600 text-sm font-medium bg-gray100 rounded-lg"
@@ -85,7 +92,7 @@ export default function Header() {
 				<button
 					onClick={toggleNav}
 					type="button"
-					className="flex items-center justify-center"
+					className="flex items-center justify-center lg:hidden"
 				>
 					<Image
 						src={hamburger}
