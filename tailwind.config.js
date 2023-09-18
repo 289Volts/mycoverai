@@ -13,6 +13,17 @@ module.exports = {
 			},
 			fontFamily: {
 				space: ['var(--font-space)']
+			},
+			backgroundColor: {
+				accent: '#47BFA3',
+				gray100: '#F2F4F7'
+			},
+			colors: {
+				altGray: {
+					100: '#F2F4F7',
+					600: '#475467',
+					800: '#1D2939'
+				}
 			}
 		}
 	},
