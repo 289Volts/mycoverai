@@ -19,7 +19,7 @@ export default function Footer({ font }) {
   ];
   return (
     <footer
-      className={`${font} grid grid-cols-[0.7fr_0.5fr_1fr] px-[8rem] gap-[6rem] py-[9rem]`}
+      className={`${font} grid grid-cols-[0.7fr_0.5fr_1fr] gap-[6rem] px-[8rem] py-[9rem]`}
     >
       <div className="flex flex-col gap-[4rem]">
         <div className="space-y-4">
@@ -75,16 +75,17 @@ export default function Footer({ font }) {
           ABOUT US
         </h2>
         <p className="text-altGray-700">
-          MyCover.ai is Africa's leading insurance infrastructure platform. We
-          leverage artificial intelligence and machine learning to scale
+          MyCover.ai is Africa&apos;s leading insurance infrastructure platform.
+          We leverage artificial intelligence and machine learning to scale
           insurance penetration across the continent.
         </p>
         <p className="text-altGray-700">
-          Through our retail channel <span className="text-accent">mycovergenius</span>, we provide product-focused
-          and technology-driven policies targeted at deepening insurance
-          adoption in Africa; creating unique and relevant products in
+          Through our retail channel{" "}
+          <span className="text-accent">mycovergenius</span>, we provide
+          product-focused and technology-driven policies targeted at deepening
+          insurance adoption in Africa; creating unique and relevant products in
           partnership with leading insurance companies. To us, insurance is not
-          just about policies, it is Africa's surest safety net!
+          just about policies, it is Africa&apos;s surest safety net!
         </p>
       </div>
     </footer>
