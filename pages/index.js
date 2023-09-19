@@ -11,6 +11,33 @@ import blackcopper from "@/public/assets/images/partners-blackcopper.png";
 import ise from "@/public/assets/images/partners-ise.png";
 import transtura from "@/public/assets/images/partners-transtura.png";
 import soft from "@/public/assets/images/partners-soft.png";
+import tetris from "@/public/assets/icons/tetris.png";
+import globe from "@/public/assets/icons/globe.png";
+import lock from "@/public/assets/icons/lock.png";
+import jigsaw from "@/public/assets/icons/jigsaw.png";
+import house from "@/public/assets/icons/sector-house.png";
+import car from "@/public/assets/icons/sector-car.png";
+import gadgets from "@/public/assets/icons/sector-gadgets.png";
+import travel from "@/public/assets/icons/sector-travel.png";
+import heart from "@/public/assets/icons/sector-health.png";
+import chevRight from "@/public/assets/icons/chevron-right.png";
+import eclipse from "@/public/assets/icons/ellipse.png";
+import dashboard from "@/public/assets/images/dashboard.png";
+import form from "@/public/assets/images/form.png";
+import codesnap from "@/public/assets/images/codesnap.png";
+import rectangleBlue from "@/public/assets/images/rectangle-blue.png";
+import rectangleBlack from "@/public/assets/images/black-rect.png";
+import triangle from "@/public/assets/images/triangle.png";
+import arrowUp from "@/public/assets/images/tools-arrow-up.png";
+import arrowDown from "@/public/assets/images/tools-arrow-down.png";
+import screenshotModel from "@/public/assets/images/screenshot-model.png";
+import screenshotCustomers from "@/public/assets/images/screenshot-2.png";
+import groupEllipse from "@/public/assets/images/group-ellipse.png";
+import progressLine from "@/public/assets/images/progress-line.png";
+import techstars from "@/public/assets/images/brands-techstars.png";
+import techcabal from "@/public/assets/images/brands-techcabal.png";
+import techtrend from "@/public/assets/images/brands-techtrend.png";
+import flutterwave from "@/public/assets/images/brands-flutterwave.png";
 
 export default function Home() {
   const images = [
@@ -37,6 +64,147 @@ export default function Home() {
     {
       src: soft,
       alt: "Soft Alliance logo",
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: tetris,
+      heading: "Built for Anyone",
+      text: "Direct access to several insurance companies in one place without worrying about multiple partnerships, integrations or compliance.",
+      bgColor: "bg-purple50",
+    },
+    {
+      icon: globe,
+      heading: "Easy to integrate APIs",
+      text: "Seamless and direct integrations into your platform. Built on a framework that lets you easily deploy insurance into the purchasing experience of customers.",
+      bgColor: "bg-success50",
+    },
+    {
+      icon: lock,
+      heading: "Automated Claim Management",
+      text: "Your customers gets automated claim support, from notifications to loss assessments, and instant payouts using real-time data inputs.",
+      bgColor: "bg-orange50",
+    },
+    {
+      icon: jigsaw,
+      heading: "Built for Anyone",
+      text: "Get access to a significant tool in the insurance value chain; a robust admin support for policy and claims management.",
+      bgColor: "bg-blue50",
+    },
+  ];
+
+  const sectors = [
+    {
+      icon: house,
+      name: "Home",
+    },
+    {
+      icon: car,
+      name: "Auto",
+    },
+    {
+      icon: gadgets,
+      name: "Gadget",
+    },
+    {
+      icon: travel,
+      name: "Travel",
+    },
+    {
+      icon: heart,
+      name: "Health",
+    },
+  ];
+
+  const activities = [
+    {
+      icon: eclipse,
+      heading: "Designed for anyone",
+      text: "Sell to customers directly from your dashboard.",
+    },
+    {
+      icon: eclipse,
+      heading: "Manage policies",
+      text: "Process, activate and track customer policies.",
+    },
+    {
+      icon: eclipse,
+      heading: "Claims handling",
+      text: "Reliably automate claims in real-time.",
+    },
+    {
+      icon: eclipse,
+      heading: "Real-time analytics",
+      text: "Essential insights needed to grow your business.",
+    },
+  ];
+
+  const tools = [
+    {
+      icon: eclipse,
+      heading: "APIs",
+      text: "Seamless API integrations designed to optimised user’s experience.",
+    },
+    {
+      icon: eclipse,
+      heading: "SDKs",
+      text: "Customizable SDKs that plays nicely with your infrastructure.",
+    },
+    {
+      icon: eclipse,
+      heading: "Claims",
+      text: "Reliably automate claims assessment with real-time data inputs, enabled by our API.",
+    },
+  ];
+
+  const model = [
+    {
+      icon: eclipse,
+      heading: "Go Full White Label",
+      text: "Our API enable customers interact with your platform only",
+    },
+    {
+      icon: eclipse,
+      heading: "Semi White Label",
+      text: "Optimise operational costs by leveraging our solutions.",
+    },
+    {
+      icon: eclipse,
+      heading: "Seamless Integration",
+      text: "Easy integrations without partnerships and compliance.",
+    },
+    {
+      icon: eclipse,
+      heading: "No Platform",
+      text: "Our platform was built for non-digital businesses too. ",
+    },
+  ];
+
+  const solutions = [
+    "Policy Manangement",
+    "Simple Wallet System",
+    "Claims Management",
+    "E-HMO ID",
+    "Fraud-free Inspection",
+  ];
+
+  const supporters = [
+    {
+      src: techstars,
+      alt: "Bolt logo",
+    },
+    {
+      src: techcabal,
+      alt: "Bitmama logo",
+    },
+    {
+      src: techtrend,
+      alt: "Blackcopper logo",
+    },
+    {
+      src: flutterwave,
+      alt: "Dise logo",
     },
   ];
   return (
@@ -108,23 +276,261 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="pt-8 lg:pt-[9rem] mx-auto w-[90%] xl:w-[80%]">
-        <div className="space-y-5 sm:space-y-0">
+      <section className="mx-auto w-[90%] py-8 lg:pt-[9rem] xl:w-[80%]">
+        <div className="space-y-5 sm:space-y-8">
           <h2 className="text-[1.125rem] font-medium">
             Brands growing with us:
           </h2>
-          <div className="grid grid-cols-2 items-center justify-items-center sm:flex sm:justify-between gap-8">
+          <div className="grid grid-cols-2 items-center justify-items-center gap-8 sm:flex sm:justify-between">
             {images.map(({ src, alt }) => (
               <Image
                 key={alt}
                 src={src}
                 alt={alt}
-                className={`sm:w-auto ${
-                  src === bitma ? "py-0" : "w-[110px] py-8"
-                } ${src === bolt ? "w-[90px] " : ""}
+                className={` ${src === bitma ? "py-0" : "w-[110px] py-8"} ${
+                  src === bolt ? "w-[90px] " : ""
+                }
                 `}
               />
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray25 py-9">
+        <div className="mx-auto w-[90%] xl:w-[80%]">
+          <div className="mb-[6.5rem] space-y-2 text-center">
+            <h2 className="text-xl font-bold text-altGray-800 xl:text-[1.875rem]">
+              Insurtech with innovators in{" "}
+              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                mind
+              </span>
+            </h2>
+            <p className="sm:text-xl">
+              Build insurtech solutions with Africa’s largest digital insurance
+              infrastructure.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-between gap-4">
+            {benefits.map(({ icon, heading, text, bgColor }) => (
+              <div
+                className={`${bgColor} relative w-[49%] space-y-10 rounded-xl px-[5rem] pb-[9rem] pt-[4rem] text-altGray-800`}
+                key={heading}
+              >
+                <Image src={icon} alt="" className="" />
+                <h2 className="text-[1.5rem] font-bold">{heading}</h2>
+                <p className="text-[1.25rem]">{text}</p>
+                <Image
+                  src={heroArr}
+                  alt=""
+                  className="absolute bottom-0 left-0"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="xl:py-[5rem]">
+        <div className="mx-auto w-[90%] xl:w-[80%]">
+          <div className="mb-[6.5rem] space-y-2 text-center">
+            <h2 className="text-xl font-bold text-altGray-800 xl:text-[1.875rem]">
+              Exciting insurance products for all
+              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                sectors
+              </span>
+            </h2>
+            <p className="sm:text-xl">
+              Build insurtech solutions with Africa’s largest digital insurance
+              infrastructure.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-between gap-4">
+            {sectors.map(({ icon, name }) => (
+              <div
+                key={name}
+                className="shadow-sectors flex w-[32%] items-center gap-7 rounded-[6px] border border-[#DBDFE4] bg-white px-7 py-9"
+              >
+                <Image src={icon} alt={`${icon} logo`} className="" />
+                <span className="text-altGray800 text-[1.25rem] font-bold">
+                  {name}
+                </span>
+              </div>
+            ))}
+            <button className="text-accent flex w-[32%] items-center justify-center gap-6 font-medium">
+              View more
+              <Image src={chevRight} alt={`cheveron right`} className="" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray25 py-[5.2rem]">
+        <div className="ml-auto flex items-center xl:w-[90%]">
+          <div className="w-[57%] space-y-[3rem]">
+            <h2 className="font-bold text-altGray-800 xl:text-[1.875rem]">
+              Manage all insurance activities from a unified
+              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                platform
+              </span>
+            </h2>
+            <div className="flex flex-wrap justify-between gap-5 gap-y-[5rem]">
+              {activities.map(({ icon, heading, text }) => (
+                <div key={heading} className="flex w-[47%] gap-5">
+                  <Image src={icon} alt="" className="mt-3 h-fit" />
+                  <div className="space-y-2">
+                    <h3 className="text-[1.875rem] font-bold text-altGray-800">
+                      {heading}
+                    </h3>
+                    <p className="text-xl text-altGray-800">{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="">
+            <Image src={dashboard} alt="" className="" />
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray900 relative xl:pb-[4rem] xl:pt-[9.5rem]">
+        <Image src={triangle} alt="" className="absolute right-0 top-0" />
+        <Image src={arrowUp} alt="" className="absolute bottom-0 left-0" />
+        <Image src={arrowDown} alt="" className="absolute right-0 top-0" />
+        <div className="mx-auto flex justify-between gap-6 xl:w-[80%]">
+          <div className="w-[50%] space-y-[4.3rem]">
+            <div className="space-y-7">
+              <h2 className="text-accent pr-5 text-[1.875rem] font-bold">
+                Everything you need to start building
+              </h2>
+              <p className="text-altGray-25 text-xl font-bold">
+                We understand the crux of good developer experience while
+                interfacing with an API. Our developer-friendly guide will get
+                you started in no time.
+              </p>
+              <button className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white">
+                Read the docs
+              </button>
+            </div>
+            <div className="bg-gray800 shadow-tools isolate rounded-lg px-[3rem] pb-[3.3rem] pt-[2.9rem]">
+              <div className="flex flex-col justify-between gap-[3.5rem]">
+                {tools.map(({ icon, heading, text }) => (
+                  <div key={heading} className="flex gap-5">
+                    <Image src={icon} alt="" className="mt-3 h-fit" />
+                    <div className="space-y-2">
+                      <h3 className="text-[1.875rem] font-bold text-white">
+                        {heading}
+                      </h3>
+                      <p className="text-altGray-300 text-xl">{text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="w-[48%] space-y-4">
+            <Image src={form} alt="" className="isolate h-[63%]" />
+            <Image src={codesnap} alt="" className="" />
+          </div>
+        </div>
+      </section>
+      <section className="xl:px- xl:pt-[8rem]">
+        <div className="ml-auto flex items-center xl:w-[90%]">
+          <div className="w-[57%] space-y-[3rem]">
+            <div className="space-y-6">
+              <h2 className="font-bold text-altGray-800 xl:text-[1.875rem]">
+                Insurance for any business &nbsp;
+                <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                  model
+                </span>
+              </h2>
+              <p className="sm:text-xl">
+                Our API is perfect for anyone, from non-digital businesses to
+                large fintech platforms to unlock new markets in different ways.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-between gap-5 gap-y-[5rem]">
+              {model.map(({ icon, heading, text }) => (
+                <div key={heading} className="flex w-[48%] gap-5">
+                  <Image src={icon} alt="" className="mt-3 h-fit" />
+                  <div className="space-y-2">
+                    <h3 className="text-[1.875rem] font-bold text-altGray-800">
+                      {heading}
+                    </h3>
+                    <p className="text-xl text-altGray-800">{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="">
+            <Image src={screenshotModel} alt="" className="" />
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray50">
+        <div className="mx-auto xl:w-[80%]">
+          <div className="mb-[6.5rem] space-y-2 text-center">
+            <h2 className="text-xl font-bold text-altGray-800 xl:text-[1.875rem]">
+              All-in-one solution for your customers
+              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                customers
+              </span>
+            </h2>
+            <p className="sm:text-xl">
+              Increase retention by giving customers the convenience of a
+              seamless insurance experience with our user-friendly mobile app.
+              Customers enjoy insurance from anywhere.
+            </p>
+          </div>
+          <div className="flex">
+            <div className="">
+              <div className="">
+                <Image src={groupEllipse} alt="" className="" />
+                <ul className="">
+                  {solutions.map((solution) => (
+                    <li key={solution} className="">
+                      {solution}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Image src={progressLine} alt="" className="" />
+            </div>
+            <Image src={screenshotCustomers} alt="" className="" />
+            <div className="">
+              <h3 className="">Efficient Policy Manangement</h3>
+              <p className="">
+                Your customers have full control over policies purchased from
+                you. The app is made to take the worry off you in managing all
+                insurance activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto w-[90%] py-8 lg:pt-[9rem] xl:w-[80%]">
+        <div className="space-y-9">
+          <h2 className="text-[1.125rem] font-medium">
+            Brands that support us:
+          </h2>
+          <div className="gap-4 sm:flex sm:justify-between">
+            {supporters.map(({ src, alt }) => (
+              <Image key={alt} src={src} alt={alt} className={`sm:w-aut`} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="">
+        <div className="mx-auto w-[90%] py-8 lg:pt-[9rem] xl:w-[80%]">
+          <div className="">
+            <h2 className="">Do you still have questions?</h2>
+            <p className="">
+              Have a chat with anyone from our friendly team here{" "}
+            </p>
+            <button className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white">
+              Contact Us
+            </button>
+          </div>
+          <div className="">
+            
           </div>
         </div>
       </section>
