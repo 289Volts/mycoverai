@@ -1,4 +1,10 @@
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import videoIcon from "@/public/assets/icons/video-1.svg";
 import horDots from "@/public/assets/images/horizontal-dots.svg";
 import verDots from "@/public/assets/images/vertical-dots.svg";
@@ -38,6 +44,8 @@ import techstars from "@/public/assets/images/brands-techstars.png";
 import techcabal from "@/public/assets/images/brands-techcabal.png";
 import techtrend from "@/public/assets/images/brands-techtrend.png";
 import flutterwave from "@/public/assets/images/brands-flutterwave.png";
+import imageGroup from "@/public/assets/images/image-group.png";
+import waves from "@/public/assets/images/waves.png";
 
 export default function Home() {
   const images = [
@@ -88,7 +96,7 @@ export default function Home() {
     },
     {
       icon: jigsaw,
-      heading: "Built for Anyone",
+      heading: "End-to-End Service",
       text: "Get access to a significant tool in the insurance value chain; a robust admin support for policy and claims management.",
       bgColor: "bg-blue50",
     },
@@ -192,19 +200,19 @@ export default function Home() {
   const supporters = [
     {
       src: techstars,
-      alt: "Bolt logo",
+      alt: "techstars logo",
     },
     {
       src: techcabal,
-      alt: "Bitmama logo",
+      alt: "techcabal logo",
     },
     {
       src: techtrend,
-      alt: "Blackcopper logo",
+      alt: "techtrend logo",
     },
     {
       src: flutterwave,
-      alt: "Dise logo",
+      alt: "flutterwave logo",
     },
   ];
   return (
@@ -235,7 +243,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:gap-8 xl:gap-0 ">
           <div className="lg:w-[85%] xl:w-[90%]">
-            <div className="mx-auto space-y-5 text-center sm:w-[80%] md:w-auto lg:space-y-8 lg:text-left xl:w-[85%]">
+            <div className="mx-auto space-y-5 text-center sm:w-[80%] md:w-auto lg:space-y-8 lg:text-left xl:ml-0 xl:mr-auto xl:w-[85%]">
               <h1 className="sm:text-8 bg-heading bg-clip-text text-[1.75rem] font-bold leading-[1.3] text-transparent md:text-[2.7rem] xl:text-[3rem]">
                 Revolutionizing the insurance experience in Africa
               </h1>
@@ -465,12 +473,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gray50">
+      <section className="bg-gray50 py-[6.5rem]">
         <div className="mx-auto xl:w-[80%]">
-          <div className="mb-[6.5rem] space-y-2 text-center">
+          <div className="mx-auto mb-[6.5rem] w-[87%] space-y-3 text-center">
             <h2 className="text-xl font-bold text-altGray-800 xl:text-[1.875rem]">
-              All-in-one solution for your customers
-              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+              All-in-one solution for your &nbsp;
+              <span className="relative isolate before:absolute before:bottom-[3px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
                 customers
               </span>
             </h2>
@@ -480,13 +488,18 @@ export default function Home() {
               Customers enjoy insurance from anywhere.
             </p>
           </div>
-          <div className="flex">
-            <div className="">
-              <div className="">
+          <div className="flex items-center justify-between gap-8">
+            <div className="flex w-[25%] justify-between">
+              <div className="flex justify-between gap-5">
                 <Image src={groupEllipse} alt="" className="" />
-                <ul className="">
-                  {solutions.map((solution) => (
-                    <li key={solution} className="">
+                <ul className="space-y-4">
+                  {solutions.map((solution, i) => (
+                    <li
+                      key={solution}
+                      className={`font-medium ${
+                        i === 0 ? "text-accent" : "text-altGray-700"
+                      }`}
+                    >
                       {solution}
                     </li>
                   ))}
@@ -495,9 +508,11 @@ export default function Home() {
               <Image src={progressLine} alt="" className="" />
             </div>
             <Image src={screenshotCustomers} alt="" className="" />
-            <div className="">
-              <h3 className="">Efficient Policy Manangement</h3>
-              <p className="">
+            <div className=" w-[34%]">
+              <h3 className="text-[1.5rem] font-bold text-altGray-800">
+                Efficient Policy Manangement
+              </h3>
+              <p className="text-[1.126rem] text-altGray-600">
                 Your customers have full control over policies purchased from
                 you. The app is made to take the worry off you in managing all
                 insurance activities.
@@ -506,7 +521,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mx-auto w-[90%] py-8 lg:pt-[9rem] xl:w-[80%]">
+      <section className="mx-auto w-[90%] py-8 pb-[6rem] lg:pt-[3rem] xl:w-[80%] ">
         <div className="space-y-9">
           <h2 className="text-[1.125rem] font-medium">
             Brands that support us:
@@ -518,19 +533,86 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="">
-        <div className="mx-auto w-[90%] py-8 lg:pt-[9rem] xl:w-[80%]">
-          <div className="">
-            <h2 className="">Do you still have questions?</h2>
-            <p className="">
+      <section className="bg-gray50">
+        <div className="mx-auto flex w-[90%] justify-between py-8 lg:pt-[9rem] xl:w-[80%]">
+          <div className="w-[36%]">
+            <h2 className="text-[2.25rem] font-bold text-altGray-800">
+              Do you still have &nbsp;
+              <span className="relative isolate before:absolute before:bottom-[-2px] before:right-[2px] before:z-[-1] before:h-[12px] before:w-[90%] before:bg-accent/90">
+                questions?
+              </span>
+            </h2>
+            <p className="mb-8 mt-4 text-[1.25rem] text-altGray-800 ">
               Have a chat with anyone from our friendly team here{" "}
             </p>
             <button className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white">
               Contact Us
             </button>
           </div>
-          <div className="">
-            
+          <div className="w-1/2">
+            <Accordion type="single" collapsible className=" ">
+              <AccordionItem
+                className="shadow-accordion bg-gray100"
+                value="item-1"
+              >
+                <AccordionTrigger className="">
+                  Are you an Insurance Comapany?
+                </AccordionTrigger>
+                <AccordionContent className="">
+                  MyCover.ai is a product of the first insurtech in Nigeria. We
+                  enable any business to access multiple insurance companies and
+                  their products from one place.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="shadow-accordion" value="item-2">
+                <AccordionTrigger className="">
+                  How do I handle claims?
+                </AccordionTrigger>
+                <AccordionContent className="">
+                  MyCover.ai is a product of the first insurtech in Nigeria. We
+                  enable any business to access multiple insurance companies and
+                  their products from one place.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="shadow-accordion" value="item-3">
+                <AccordionTrigger className="">
+                  Do I need to have an online platform?
+                </AccordionTrigger>
+                <AccordionContent className="">
+                  MyCover.ai is a product of the first insurtech in Nigeria. We
+                  enable any business to access multiple insurance companies and
+                  their products from one place.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="shadow-accordion" value="item-4">
+                <AccordionTrigger className="">
+                  Do I need a license?
+                </AccordionTrigger>
+                <AccordionContent className="">
+                  MyCover.ai is a product of the first insurtech in Nigeria. We
+                  enable any business to access multiple insurance companies and
+                  their products from one place.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+      <section className="pt-[14rem]">
+        <div className="bg-gray900 py-[4rem] relative">
+         <Image src={waves} alt="" className="absolute top-0 right-0" />
+         <Image src={arrowUp} alt="" className="absolute bottom-0 left-0" />
+          <div className="flex items-center justify-between mx-auto xl:w-[80%] gap-[4rem]">
+            <div className="w-[55%]">
+              <h2 className="text-[3rem] font-bold text-white">
+                Join our insurtech ecosystem to democratise insurance in{" "}
+                <span className="text-accent">Africa.</span>
+              </h2>
+              <button className="rounded-lg isolate w-[30%] mt-[3rem] bg-accent px-5 py-3 text-sm font-medium text-white">
+                Get Started
+              </button>
+            </div>
+            <Image src={imageGroup} alt="" className="isolate" />
           </div>
         </div>
       </section>
