@@ -18,11 +18,21 @@ module.exports = {
 				accent: '#47BFA3',
 				gray100: '#F2F4F7'
 			},
+			backgroundImage: {
+				heading: 'linear-gradient(99deg, #000 0%, #47BFA3 94.22%)'
+			},
+			boxShadow: {
+				button: '-0.61698px 0.61698px 7.71222px 0px rgba(0, 0, 0, 0.02)',
+				pill: '-2px 2px 25px 0px rgba(0, 0, 0, 0.02)'
+			},
 			colors: {
 				altGray: {
+					50: '#F9FAFB',
 					100: '#F2F4F7',
 					600: '#475467',
-					800: '#1D2939'
+					700: '#344054',
+					800: '#1D2939',
+					900: '#101828'
 				}
 			}
 		}

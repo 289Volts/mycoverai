@@ -13,7 +13,7 @@ export default function Header() {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<header className="p-5 px-4 flex justify-between items-center lg:w-[90%] mx-auto lg:px-0 xl:w-[80%]">
+		<header className="p-5 px-4 flex justify-between items-center mx-auto xl:w-[80%] md:w-[90%] md:px-0">
 			<Link
 				href="/"
 				className=""

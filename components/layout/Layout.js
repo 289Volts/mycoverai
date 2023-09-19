@@ -6,7 +6,7 @@ export default function Layout({ children, font }) {
 	return (
 		<>
 			<Header font={`${font} font-space`} />
-			<main className={`${font} font-space`}>{children}</main>
+			<main className={`${font} font-space w-[90%] mx-auto xl:w-[80%]`}>{children}</main>
 			<Footer font={`${font} font-space`} />
 		</>
 	);
