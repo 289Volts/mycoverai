@@ -5,7 +5,7 @@ import hamburger from '@/public/assets/icons/hamburger.svg';
 import close from '@/public/assets/icons/close.svg';
 import Image from 'next/image';
 
-export default function Header() {
+export default function Header({font}) {
 	const links = ['Products', 'Solutions', 'Developers', 'Company', 'Learn'];
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +13,7 @@ export default function Header() {
 		setIsOpen(!isOpen);
 	};
 	return (
-		<header className="p-5 px-4 flex justify-between items-center mx-auto xl:w-[80%] md:w-[90%] md:px-0">
+		<header className={`${font} p-5 px-4 flex justify-between items-center mx-auto xl:w-[80%] md:w-[90%] md:px-0`}>
 			<Link
 				href="/"
 				className=""
