@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React from "react";
 import logo from "@/public/assets/images/sidenav-logo.png";
+import abstract from "@/public/assets/images/abstract.png";
 import globe from "@/public/assets/icons/globe.svg";
 import dashboard from "@/public/assets/icons/analytics.svg";
 import stack from "@/public/assets/icons/stack.svg";
@@ -77,8 +77,14 @@ export default function Sidenav() {
     },
   ];
   return (
-    <aside className="bg-sideNav text-altGray-200 h-screen overflow-y-scroll  overscroll-contain px-9 py-6 text-sm font-medium no-scrollbar">
+    <aside className="bg-sideNav text-altGray-200 no-scrollbar relative h-[100dvh] overflow-y-scroll overscroll-contain px-9 py-6 pb-14 text-sm font-medium">
       <Image src={logo} alt="company logo" className="" />
+      <Image
+        src={abstract}
+              alt=""
+              aria-hidden
+        className="absolute top-[100%] left-0"
+      />
       <div className="mt-[2.9rem] flex items-center gap-2">
         <Image src={globe} alt="globe icon" className="" />
         <span className="">Get Started</span>
@@ -100,7 +106,9 @@ export default function Sidenav() {
           {admin.map(({ text, src }) => (
             <div key={text} className="flex items-center gap-2">
               <Image src={src} alt={text} className="" />
-              <span className={`${text === "Claim" ? "text-accent" : ""}`}>{text}</span>
+              <span className={`${text === "Claim" ? "text-accent" : ""}`}>
+                {text}
+              </span>
             </div>
           ))}
         </div>

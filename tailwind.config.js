@@ -49,6 +49,8 @@ module.exports = {
           800: "#1D2939",
           900: "#101828",
         },
+        dark: "#141518",
+        text1: "#323B4B",
       },
       keyframes: {
         "accordion-down": {
