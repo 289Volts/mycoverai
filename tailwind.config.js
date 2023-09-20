@@ -41,6 +41,7 @@ module.exports = {
         accent: "#47BFA3",
         altGray: {
           25: "#FAFBFD",
+          40: "#757B8C",
           50: "#F9FAFB",
           100: "#F2F4F7",
           200: "#EAECF0",
