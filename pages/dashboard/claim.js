@@ -2,14 +2,13 @@ import Sidenav from "@/components/layout/Sidenav";
 import notification from "@/public/assets/icons/notification.png";
 import headerAvatar from "@/public/assets/images/header-avatar.png";
 import tableAvatar from "@/public/assets/images/avatar-table.png";
+import cashHand from "@/public/assets/images/cash-hand.png";
 import chevDown from "@/public/assets/icons/chevron-down.svg";
 import chevDownBig from "@/public/assets/icons/chevron-down-big.svg";
-import cancel from "@/public/assets/icons/cancel.svg";
 import search from "@/public/assets/icons/search.svg";
 import filter from "@/public/assets/icons/filter.svg";
 import anchor from "@/public/assets/icons/export.svg";
-import arrowRight from "@/public/assets/icons/arrow-right.svg";
-import arrowLeft from "@/public/assets/icons/arrow-left.svg";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -101,92 +100,37 @@ export default function Claim() {
             </div>
           </div>
         </div>
-        <div className="">
-          <div className="">
+        <div className="mx-auto my-6 w-[88%] rounded-xl">
+          <div className="flex justify-between rounded-xl bg-white pl-9 pt-4">
             <div className="">
-              <p className="">Make Claim</p>
-              <p className="">Select a product to make claim on</p>
+              <p className="text-[2.125rem] font-semibold text-black">
+                Make Claim
+              </p>
+              <p className="text-[1.125rem] text-altGray-700">
+                Select a product to make claim on
+              </p>
             </div>
+            <Image src={cashHand} alt="" className="" />
           </div>
-          <div className="mx-auto my-[1.875rem] mt-5 flex w-[90%] justify-between">
-            <Link
-              href=""
-              className="flex items-center justify-center rounded-lg bg-accent px-[2.8rem] py-[0.33rem] font-medium text-white"
-            >
-              Make Claim
-            </Link>
-            <div className="flex gap-7">
-              <div className="flex flex-col gap-1 rounded-lg bg-accent px-4 py-2">
-                <span className="text-sm text-white">Total Claims</span>
-                <span className="text-[1.25rem] font-semibold text-white">
-                  2,420
-                </span>
+          <div className="mx-auto my-[1.875rem] mt-5">
+            <div className="flex w-full justify-between gap-3">
+              <div className="shadow-textFilter flex flex-1 items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[0.875rem] py-[0.13rem]">
+                <Image src={search} alt="cheveron down icon" />
+                <input
+                  type="search"
+                  name=""
+                  id=""
+                  placeholder="Search Product"
+                  className="placeholder:text-altGray-400 flex-1 py-2 placeholder:text-sm"
+                />
               </div>
-              <div className="flex flex-col gap-1 rounded-lg bg-purple-500 px-4 py-2">
-                <span className="text-sm text-white">Settled</span>
-                <span className="text-[1.25rem] font-semibold text-white">
-                  500
-                </span>
-              </div>
-              <div className="flex flex-col gap-1 rounded-lg bg-yellow-500 px-4 py-2">
-                <span className="text-sm text-white">In progress</span>
-                <span className="text-[1.25rem] font-semibold text-white">
-                  300
-                </span>
-              </div>
-              <div className="flex flex-col gap-1 rounded-lg bg-red-400 px-4 py-2">
-                <span className="text-sm text-white">Rejected</span>
-                <span className="text-[1.25rem] font-semibold text-white">
-                  1050
-                </span>
+              <div className="shadow-textFilter flex w-fit items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[1.125rem] py-[0.13rem] text-sm font-semibold text-altGray-700">
+                <span className="">Filters by : All Products</span>
+                <Image src={chevDownBig} alt="cheveron down icon" />
               </div>
             </div>
           </div>
           <div className="mx-auto flex w-[90%] flex-col gap-4 rounded-xl bg-white">
-            <div className="mt-5 space-y-6 p-4 pb-0">
-              <div className="flex items-center justify-between">
-                <div className="shadow-textFilter overflow-hidden rounded-lg border border-altGray-300 text-xs font-medium text-altGray-700">
-                  <button className="border-r border-r-altGray-300 bg-[#070707] px-4 py-[0.63rem] text-white">
-                    All
-                  </button>
-                  <button className="border-r border-r-altGray-300 px-4 py-[0.63rem]">
-                    Paid
-                  </button>
-                  <button className="border-r border-r-altGray-300 px-4 py-[0.63rem]">
-                    Pending
-                  </button>
-                  <button className=" px-4 py-[0.63rem]">Rejected</button>
-                </div>
-                <div className="flex gap-5">
-                  <div className="flex gap-3">
-                    <div className="shadow-textFilter flex w-[35] items-center gap-2 rounded-lg border border-altGray-300 px-[0.875rem] py-[0.13rem]">
-                      <Image src={search} alt="cheveron down icon" />
-                      <input
-                        type="search"
-                        name=""
-                        id=""
-                        placeholder="Search"
-                        className="placeholder:text-altGray-400 flex-1 py-2 placeholder:text-sm"
-                      />
-                    </div>
-                    <div className="shadow-textFilter flex w-[35] items-center gap-2 rounded-lg border border-altGray-300 px-[1.125rem] py-[0.13rem] text-sm font-semibold text-altGray-700">
-                      <Image src={filter} alt="cheveron down icon" />
-                      <span className="">Filter</span>
-                    </div>
-                  </div>
-                  <div className="shadow-textFilter flex w-[35] items-center gap-2 rounded-lg  bg-gray100 px-[1.125rem] py-[0.13rem] text-sm font-semibold text-accent">
-                    <Image src={anchor} alt="cheveron down icon" />
-                    <span className="">Export</span>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <p className="text-dark text-[1.125rem] font-medium">
-                  All Claims
-                </p>
-                <p className="text-altGray-40 text-sm">254 claims</p>
-              </div>
-            </div>
             {/* table */}
             <div className="">
               <table className="w-full text-left">
