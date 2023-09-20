@@ -46,6 +46,7 @@ import techtrend from "@/public/assets/images/brands-techtrend.png";
 import flutterwave from "@/public/assets/images/brands-flutterwave.png";
 import imageGroup from "@/public/assets/images/image-group.png";
 import waves from "@/public/assets/images/waves.png";
+import Layout from "@/components/layout/Layout";
 
 export default function Home() {
   const images = [
@@ -355,7 +356,7 @@ export default function Home() {
             {sectors.map(({ icon, name }) => (
               <div
                 key={name}
-                className="shadow-sectors flex w-[32%] items-center gap-7 rounded-[6px] border border-[#DBDFE4] bg-white px-7 py-9"
+                className="flex w-[32%] items-center gap-7 rounded-[6px] border border-[#DBDFE4] bg-white px-7 py-9 shadow-sectors"
               >
                 <Image src={icon} alt={`${icon} logo`} className="" />
                 <span className="text-altGray800 text-[1.25rem] font-bold">
@@ -363,7 +364,7 @@ export default function Home() {
                 </span>
               </div>
             ))}
-            <button className="text-accent flex w-[32%] items-center justify-center gap-6 font-medium">
+            <button className="flex w-[32%] items-center justify-center gap-6 font-medium text-accent">
               View more
               <Image src={chevRight} alt={`cheveron right`} className="" />
             </button>
@@ -398,17 +399,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gray900 relative xl:pb-[4rem] xl:pt-[9.5rem]">
+      <section className="relative bg-gray900 xl:pb-[4rem] xl:pt-[9.5rem]">
         <Image src={triangle} alt="" className="absolute right-0 top-0" />
         <Image src={arrowUp} alt="" className="absolute bottom-0 left-0" />
         <Image src={arrowDown} alt="" className="absolute right-0 top-0" />
         <div className="mx-auto flex justify-between gap-6 xl:w-[80%]">
           <div className="w-[50%] space-y-[4.3rem]">
             <div className="space-y-7">
-              <h2 className="text-accent pr-5 text-[1.875rem] font-bold">
+              <h2 className="pr-5 text-[1.875rem] font-bold text-accent">
                 Everything you need to start building
               </h2>
-              <p className="text-altGray-25 text-xl font-bold">
+              <p className="text-xl font-bold text-altGray-25">
                 We understand the crux of good developer experience while
                 interfacing with an API. Our developer-friendly guide will get
                 you started in no time.
@@ -417,7 +418,7 @@ export default function Home() {
                 Read the docs
               </button>
             </div>
-            <div className="bg-gray800 shadow-tools isolate rounded-lg px-[3rem] pb-[3.3rem] pt-[2.9rem]">
+            <div className="isolate rounded-lg bg-gray800 px-[3rem] pb-[3.3rem] pt-[2.9rem] shadow-tools">
               <div className="flex flex-col justify-between gap-[3.5rem]">
                 {tools.map(({ icon, heading, text }) => (
                   <div key={heading} className="flex gap-5">
@@ -426,7 +427,7 @@ export default function Home() {
                       <h3 className="text-[1.875rem] font-bold text-white">
                         {heading}
                       </h3>
-                      <p className="text-altGray-300 text-xl">{text}</p>
+                      <p className="text-xl text-altGray-300">{text}</p>
                     </div>
                   </div>
                 ))}
@@ -552,7 +553,7 @@ export default function Home() {
           <div className="w-1/2">
             <Accordion type="single" collapsible className=" ">
               <AccordionItem
-                className="shadow-accordion bg-gray100"
+                className="bg-gray100 shadow-accordion"
                 value="item-1"
               >
                 <AccordionTrigger className="">
@@ -599,16 +600,16 @@ export default function Home() {
         </div>
       </section>
       <section className="pt-[14rem]">
-        <div className="bg-gray900 py-[4rem] relative">
-         <Image src={waves} alt="" className="absolute top-0 right-0" />
-         <Image src={arrowUp} alt="" className="absolute bottom-0 left-0" />
-          <div className="flex items-center justify-between mx-auto xl:w-[80%] gap-[4rem]">
+        <div className="relative bg-gray900 py-[4rem]">
+          <Image src={waves} alt="" className="absolute right-0 top-0" />
+          <Image src={arrowUp} alt="" className="absolute bottom-0 left-0" />
+          <div className="mx-auto flex items-center justify-between gap-[4rem] xl:w-[80%]">
             <div className="w-[55%]">
               <h2 className="text-[3rem] font-bold text-white">
                 Join our insurtech ecosystem to democratise insurance in{" "}
                 <span className="text-accent">Africa.</span>
               </h2>
-              <button className="rounded-lg isolate w-[30%] mt-[3rem] bg-accent px-5 py-3 text-sm font-medium text-white">
+              <button className="isolate mt-[3rem] w-[30%] rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white">
                 Get Started
               </button>
             </div>
@@ -619,3 +620,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
