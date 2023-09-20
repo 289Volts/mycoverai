@@ -79,13 +79,13 @@ export default function Header({font}) {
 			<div className="flex items-center gap-6">
 				<div className="space-x-5 hidden sm:flex">
 					<Link
-						href=""
+						href="/dashboard"
 						className="py-3 px-5 text-altGray-600 text-sm font-medium bg-gray100 rounded-lg"
 					>
 						Login
 					</Link>
 					<Link
-						href=""
+						href="/dashboard"
 						className="py-3 px-5 text-white text-sm font-medium rounded-lg bg-accent"
 					>
 						Get Started
