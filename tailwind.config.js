@@ -17,6 +17,7 @@ module.exports = {
         gray25: "#FAFBFD",
         gray50: "#F9FAFB",
         gray100: "#F2F4F7",
+        gray200: "#EAECF0",
         gray800: "#1D2939",
         gray900: "#101828",
         purple50: "#F4F3FF",
@@ -34,6 +35,7 @@ module.exports = {
         sectors: "0px 4px 6px 0px rgba(0, 0, 0, 0.05)",
         tools: "0px 4px 9px 0px rgba(0, 0, 0, 0.25)",
         accordion: "0px 1px 2px 0px rgba(0, 0, 0, 0.18)",
+        timeFilter: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
       },
       colors: {
         accent: "#47BFA3",
@@ -44,6 +46,7 @@ module.exports = {
           200: "#EAECF0",
           300: "#D0D5DD",
           400: "#98A2B3",
+          500: "#667085",
           600: "#475467",
           700: "#344054",
           800: "#1D2939",
