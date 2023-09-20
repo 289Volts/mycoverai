@@ -15,6 +15,7 @@ import people from "@/public/assets/icons/people.svg";
 import inspect from "@/public/assets/icons/inspect.svg";
 import whiteClaim from "@/public/assets/icons/white-claim.svg";
 import settings from "@/public/assets/icons/settings.svg";
+import Link from "next/link";
 
 export default function Sidenav() {
   const admin = [
@@ -78,12 +79,16 @@ export default function Sidenav() {
   ];
   return (
     <aside className="bg-sideNav text-altGray-200 relative px-9 py-6 pb-14 text-sm font-medium">
-      <Image src={logo} alt="company logo" className="" />
+      <Link href="/" className="">
+        {" "}
+        <Image src={logo} alt="company logo" className="" />
+      </Link>
+
       <Image
         src={abstract}
         alt=""
         aria-hidden
-        className="absolute left-0 bottom-0"
+        className="absolute bottom-0 left-0"
       />
       <div className="mt-[2.9rem] flex items-center gap-2">
         <Image src={globe} alt="globe icon" className="" />
