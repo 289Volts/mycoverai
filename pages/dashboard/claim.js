@@ -70,11 +70,9 @@ const tableData = [
     dateSubmitted: "12th Jan 2020",
   },
 ];
-
-const pagination = [1, 2, 3, "...", 8, 9, 10];
-export default function Dashboard() {
+export default function Claim() {
   return (
-    <main className="grid grid-cols-[0.23fr_1fr] bg-gray50 static">
+    <main className="static grid grid-cols-[0.23fr_1fr] bg-gray50">
       <Sidenav />
       <section className="">
         <div className="flex items-center justify-between bg-white px-10 py-5 font-semibold">
@@ -104,19 +102,15 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="">
-          <div className="border-b-altGray-500 mx-auto mt-5 flex w-[90%] items-center justify-end gap-3 border-b-[0.2px] pb-2">
-            <button className="shadow-timeFilter flex items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[1.125rem] py-2 text-sm font-semibold">
-              <span className="">Filters by : All time</span>
-              <Image src={chevDownBig} aria-hidden alt="chevron facing down" />
-            </button>
-            <button className="shadow-timeFilter bg-gray200 flex items-center gap-[0.63rem] rounded-lg  px-2 text-xs">
-              <span className="">12 July - 12 August</span>
-              <Image src={cancel} aria-hidden alt="cancel icon" />
-            </button>
+          <div className="">
+            <div className="">
+              <p className="">Make Claim</p>
+              <p className="">Select a product to make claim on</p>
+            </div>
           </div>
           <div className="mx-auto my-[1.875rem] mt-5 flex w-[90%] justify-between">
             <Link
-              href="/dashboard/claim"
+              href=""
               className="flex items-center justify-center rounded-lg bg-accent px-[2.8rem] py-[0.33rem] font-medium text-white"
             >
               Make Claim
@@ -193,6 +187,7 @@ export default function Dashboard() {
                 <p className="text-altGray-40 text-sm">254 claims</p>
               </div>
             </div>
+            {/* table */}
             <div className="">
               <table className="w-full text-left">
                 <thead className="bg-gray25">
@@ -283,36 +278,6 @@ export default function Dashboard() {
                 </tbody>
                 <tfoot className=""></tfoot>
               </table>
-            </div>
-            <div className="flex justify-end p-4">
-              <div className="flex overflow-hidden rounded-lg border border-altGray-300 text-sm font-medium">
-                <button className="flex items-center gap-2 px-4 py-[0.63rem]">
-                  <Image
-                    src={arrowLeft}
-                    alt="left arrow icon to go to previous page "
-                    className=""
-                  />
-                  <span className="text-altGray-500">Previous</span>
-                </button>
-                {pagination.map((page) => (
-                  <button
-                    key={page}
-                    className={`border-l border-r border-l-altGray-300 border-r-altGray-300 px-5 py-2 text-altGray-600 ${
-                      page == 1 ? "bg-gray50" : ""
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button className="flex items-center gap-2 px-4 py-[0.63rem]">
-                  <span className="text-accent">Next</span>
-                  <Image
-                    src={arrowRight}
-                    alt="right arrow icon to go to next page "
-                    className=""
-                  />
-                </button>
-              </div>
             </div>
           </div>
         </div>

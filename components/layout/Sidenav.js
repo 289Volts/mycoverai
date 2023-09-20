@@ -77,13 +77,13 @@ export default function Sidenav() {
     },
   ];
   return (
-    <aside className="bg-sideNav text-altGray-200 no-scrollbar relative h-[100dvh] overflow-y-scroll overscroll-contain px-9 py-6 pb-14 text-sm font-medium">
+    <aside className="bg-sideNav text-altGray-200 relative px-9 py-6 pb-14 text-sm font-medium">
       <Image src={logo} alt="company logo" className="" />
       <Image
         src={abstract}
-              alt=""
-              aria-hidden
-        className="absolute top-[100%] left-0"
+        alt=""
+        aria-hidden
+        className="absolute left-0 bottom-0"
       />
       <div className="mt-[2.9rem] flex items-center gap-2">
         <Image src={globe} alt="globe icon" className="" />
