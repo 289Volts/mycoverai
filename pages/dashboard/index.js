@@ -281,7 +281,6 @@ export default function Dashboard() {
                     ),
                   )}
                 </tbody>
-                <tfoot className=""></tfoot>
               </table>
             </div>
             <div className="flex justify-end p-4">

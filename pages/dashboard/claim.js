@@ -6,66 +6,74 @@ import cashHand from "@/public/assets/images/cash-hand.png";
 import chevDown from "@/public/assets/icons/chevron-down.svg";
 import chevDownBig from "@/public/assets/icons/chevron-down-big.svg";
 import search from "@/public/assets/icons/search.svg";
-import filter from "@/public/assets/icons/filter.svg";
-import anchor from "@/public/assets/icons/export.svg";
-
+import flexicare from "@/public/assets/icons/flexicare.svg";
+import homeInsurance from "@/public/assets/icons/home-insurance.svg";
+import thirdParty from "@/public/assets/icons/third-party.svg";
+import active from "@/public/assets/icons/active.svg";
+import inactive from "@/public/assets/icons/inactive.svg";
+import deactivated from "@/public/assets/icons/deactivated.svg";
 import Image from "next/image";
 import Link from "next/link";
 
 const tableData = [
   {
-    src: tableAvatar,
-    name: "Alex Igwe",
-    insurance: "IN - 4567899",
-    email: "alex@gmail.com",
-    phone: "090876542345",
-    product: "Comprehensive Auto",
-    policyId: "RTYUI-12",
-    timesClaimed: "2",
+    src: homeInsurance,
+    productName: "Credit life",
+    productCategory: "Credit life",
+    provider: "Arm life Plc",
+    distributor: "Mycovergenius",
+    productId: "PR23456",
+    customers: "10",
+    status: "active",
+    statusImg: active,
     dateSubmitted: "12th Jan 2020",
   },
   {
-    src: tableAvatar,
-    name: "Alex Igwe",
-    insurance: "IN - 4567899",
-    email: "alex@gmail.com",
-    phone: "090876542345",
-    product: "3rd Party Auto",
-    policyId: "RTYUI-12",
-    timesClaimed: "1",
+    src: flexicare,
+    productName: "Flexicare",
+    productCategory: "Health",
+    provider: "Hygeia",
+    distributor: "Payfi",
+    productId: "PR23456",
+    customers: "40",
+    status: "active",
+    statusImg: active,
     dateSubmitted: "12th Jan 2020",
   },
   {
-    src: tableAvatar,
-    name: "Alex Igwe",
-    insurance: "IN - 4567899",
-    email: "alex@gmail.com",
-    phone: "090876542345",
-    product: "Gadget",
-    policyId: "RTYUI-12",
-    timesClaimed: "3",
+    src: flexicare,
+    productName: "Flexicare",
+    productCategory: "Health",
+    provider: "Hygeia",
+    distributor: "Fincra",
+    productId: "PR23456",
+    customers: "30",
+    status: "active",
+    statusImg: active,
     dateSubmitted: "12th Jan 2020",
   },
   {
-    src: tableAvatar,
-    name: "Alex Igwe",
-    insurance: "IN - 4567899",
-    email: "alex@gmail.com",
-    phone: "090876542345",
-    product: "Gadget cover",
-    policyId: "RTYUI-12",
-    timesClaimed: "1",
+    src: thirdParty,
+    productName: "3rd Party",
+    productCategory: "Auto",
+    provider: "Arm life Plc",
+    distributor: "Blackcopper",
+    productId: "PR23456",
+    customers: "20",
+    status: "deactivated",
+    statusImg: deactivated,
     dateSubmitted: "12th Jan 2020",
   },
   {
-    src: tableAvatar,
-    name: "Alex Igwe",
-    insurance: "IN - 4567899",
-    email: "alex@gmail.com",
-    phone: "090876542345",
-    product: "Office content",
-    policyId: "RTYUI-12",
-    timesClaimed: "2",
+    src: homeInsurance,
+    productName: "House Insurance",
+    productCategory: "House Insurance",
+    provider: "Arm life Plc",
+    distributor: "Payday",
+    productId: "PR23456",
+    customers: "10",
+    status: "inactive",
+    statusImg: inactive,
     dateSubmitted: "12th Jan 2020",
   },
 ];
@@ -100,7 +108,7 @@ export default function Claim() {
             </div>
           </div>
         </div>
-        <div className="mx-auto my-6 w-[88%] rounded-xl">
+        <div className="mx-auto my-6 w-[90%] rounded-xl">
           <div className="flex justify-between rounded-xl bg-white pl-9 pt-4">
             <div className="">
               <p className="text-[2.125rem] font-semibold text-black">
@@ -130,38 +138,41 @@ export default function Claim() {
               </div>
             </div>
           </div>
-          <div className="mx-auto flex w-[90%] flex-col gap-4 rounded-xl bg-white">
+          <div className="mx-auto flex flex-col gap-4 rounded-xl bg-white">
             {/* table */}
             <div className="">
               <table className="w-full text-left">
                 <thead className="bg-gray25">
-                  <tr className="">
+                  <tr className="border-b-altGray-200 border-b">
                     <th className="py-3 pl-6">
                       <input type="checkbox" name="" id="" />
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Customer name
+                      Product name
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Insurance No.
+                      Product Category
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Email address
+                      Provider
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Phone no
+                      Distributor
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Product
+                      Product I.D
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Policy I.D
+                      No. customer
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      All time claimed
+                      Date added
                     </th>
                     <th className="text-altGray-500 px-6 py-3 text-xs">
-                      Date submitted
+                      Policy status
+                    </th>
+                    <th className="text-altGray-500 pr-6 py-3 text-xs">
+                      Action
                     </th>
                   </tr>
                 </thead>
@@ -169,17 +180,18 @@ export default function Claim() {
                   {tableData.map(
                     ({
                       src,
-                      name,
-                      insurance,
-                      email,
-                      phone,
-                      product,
-                      policyId,
-                      timesClaimed,
+                      productName,
+                      productCategory,
+                      provider,
+                      distributor,
+                      productId,
+                      customers,
+                      status,
+                      statusImg,
                       dateSubmitted,
                     }) => (
                       <tr
-                        key={product}
+                        key={distributor}
                         className="border-b-altGray-200 border-b"
                       >
                         <td className="py-4 pl-6">
@@ -192,35 +204,60 @@ export default function Claim() {
                             className="rounded-full"
                           />
                           <span className="text-xs font-medium text-altGray-900">
-                            {name}
+                            {productName}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
-                          {insurance}
+                          {productCategory}
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
-                          {email}
+                          {provider}
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
-                          {phone}
+                          {distributor}
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
-                          {product}
+                          {productId}
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
-                          {policyId}
-                        </td>
-                        <td className="px-6 py-4 text-xs text-altGray-700">
-                          {timesClaimed}
+                          {customers}
                         </td>
                         <td className="px-6 py-4 text-xs text-altGray-700">
                           {dateSubmitted}
+                        </td>
+                        <td className="px-6 py-4">
+                          <div
+                            className={`flex w-fit items-center gap-[10px] rounded-2xl px-2 ${
+                              status === "active"
+                                ? "bg-[#ECFDF3] text-[0.63rem] text-[#027A48]"
+                                : status === "inactive"
+                                ? "bg-[#FFFAEB] text-[0.75rem] text-[#B54708]"
+                                : "bg-[#FEF3F2] text-[0.75rem] text-[#B42318]"
+                            }`}
+                          >
+                            <Image
+                              src={statusImg}
+                              alt="notifications"
+                              className="rounded-full"
+                            />
+                            <span className="capitalize">{status}</span>
+                          </div>
+                        </td>
+                        <td className=" py-4 pr-6 text-xs text-altGray-800">
+                          <button
+                            disabled={
+                              status === "deactivated" ||
+                              status === "inactive"
+                            }
+                            className="w-full rounded-lg bg-[#D8EEE9] p-[0.63rem] disabled:bg-[#D8EEE9]/50"
+                          >
+                            Claim
+                          </button>
                         </td>
                       </tr>
                     ),
                   )}
                 </tbody>
-                <tfoot className=""></tfoot>
               </table>
             </div>
           </div>
