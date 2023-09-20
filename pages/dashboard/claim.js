@@ -12,8 +12,10 @@ import thirdParty from "@/public/assets/icons/third-party.svg";
 import active from "@/public/assets/icons/active.svg";
 import inactive from "@/public/assets/icons/inactive.svg";
 import deactivated from "@/public/assets/icons/deactivated.svg";
+import close from "@/public/assets/icons/close-rounded.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const tableData = [
   {
@@ -78,8 +80,52 @@ const tableData = [
   },
 ];
 export default function Claim() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOverlay = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <main className="static grid grid-cols-[0.23fr_1fr] bg-gray50">
+    <main className="relative grid grid-cols-[0.23fr_1fr] overflow-hidden bg-gray50">
+      <div
+        className={`absolute inset-0 z-[1] transition duration-500 overflow-hidden ${
+          isOpen ? "translate-x-0" : "translate-x-[100%]"
+        }`}
+      >
+        <div className=" h-full w-full bg-[#323B4B80] backdrop-blur-[2px]" />
+        <div className="absolute bottom-0 right-0 top-0 flex w-[40%] gap-7">
+          <button onClick={toggleOverlay} className="mt-10 self-start">
+            <Image src={close} alt="close button icon" className="" />
+          </button>
+          <div className="flex-1 bg-white px-8 py-7">
+            <div className="">
+              <div className="mb-9 border-b border-b-altGray-300 pb-4">
+                <h2 className="text-[2.125rem] font-semibold text-[#1E1F20]">
+                  Claim / <span className="text-accent">Credit Life</span>
+                </h2>
+                <p className="text-[1.125rem] text-altGray-700/80">
+                  Select the Customer you are making claim on{" "}
+                </p>
+              </div>
+              <div className="mb-6 flex w-full justify-between gap-3">
+                <div className="shadow-textFilter flex flex-1 items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[0.875rem] py-[0.13rem]">
+                  <Image src={search} alt="cheveron down icon" />
+                  <input
+                    type="search"
+                    name=""
+                    id=""
+                    placeholder="Search Customer"
+                    className="placeholder:text-altGray-400 flex-1 py-2 placeholder:text-sm"
+                  />
+                </div>
+                <div className="shadow-textFilter flex w-fit items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[1.125rem] py-[0.13rem] text-sm font-semibold text-altGray-700">
+                  <span className="">Filters by : All</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Sidenav />
       <section className="">
         <div className="flex items-center justify-between bg-white px-10 py-5 font-semibold">
@@ -171,7 +217,7 @@ export default function Claim() {
                     <th className="text-altGray-500 px-6 py-3 text-xs">
                       Policy status
                     </th>
-                    <th className="text-altGray-500 pr-6 py-3 text-xs">
+                    <th className="text-altGray-500 py-3 pr-6 text-xs">
                       Action
                     </th>
                   </tr>
@@ -245,9 +291,9 @@ export default function Claim() {
                         </td>
                         <td className=" py-4 pr-6 text-xs text-altGray-800">
                           <button
+                            onClick={toggleOverlay}
                             disabled={
-                              status === "deactivated" ||
-                              status === "inactive"
+                              status === "deactivated" || status === "inactive"
                             }
                             className="w-full rounded-lg bg-[#D8EEE9] p-[0.63rem] disabled:bg-[#D8EEE9]/50"
                           >
