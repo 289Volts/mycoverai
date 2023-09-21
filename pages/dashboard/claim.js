@@ -79,6 +79,37 @@ const tableData = [
     dateSubmitted: "12th Jan 2020",
   },
 ];
+
+const customerData = [
+  {
+    customerName: "Alexandra Igwe",
+    policyNo: "IN - 123455",
+    totalClaimed: 0,
+    status: "active",
+    statusImg: active,
+  },
+  {
+    customerName: "Ajayi Ibrahim",
+    policyNo: "IN - 123455",
+    totalClaimed: 0,
+    status: "active",
+    statusImg: active,
+  },
+  {
+    customerName: "Dabiri Oluwaseun",
+    policyNo: "IN - 123455",
+    totalClaimed: 1,
+    status: "expired",
+    statusImg: deactivated,
+  },
+  {
+    customerName: "Chuks Alex",
+    policyNo: "IN - 123455",
+    totalClaimed: 1,
+    status: "expired",
+    statusImg: deactivated,
+  },
+];
 export default function Claim() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -88,12 +119,12 @@ export default function Claim() {
   return (
     <main className="relative grid grid-cols-[0.23fr_1fr] overflow-hidden bg-gray50">
       <div
-        className={`absolute inset-0 z-[1] transition duration-500 overflow-hidden ${
+        className={`absolute inset-0 z-[1] overflow-hidden transition duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-[100%]"
         }`}
       >
         <div className=" h-full w-full bg-[#323B4B80] backdrop-blur-[2px]" />
-        <div className="absolute bottom-0 right-0 top-0 flex w-[40%] gap-7">
+        <div className="absolute bottom-0 right-0 top-0 flex w-[43%] gap-7">
           <button onClick={toggleOverlay} className="mt-10 self-start">
             <Image src={close} alt="close button icon" className="" />
           </button>
@@ -120,6 +151,83 @@ export default function Claim() {
                 </div>
                 <div className="shadow-textFilter flex w-fit items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[1.125rem] py-[0.13rem] text-sm font-semibold text-altGray-700">
                   <span className="">Filters by : All</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 rounded-xl bg-white">
+                {/* table */}
+                <div className="">
+                  <table className="w-full text-left">
+                    <thead className="bg-gray25">
+                      <tr className="border-b-altGray-200 border-b">
+                        <th className="text-altGray-500 px-6 py-3 text-xs">
+                          Customer name
+                        </th>
+                        <th className="text-altGray-500 px-6 py-3 text-xs">
+                          Policy No.
+                        </th>
+                        <th className="text-altGray-500 px-6 py-3 text-xs">
+                          Total Claimed
+                        </th>
+                        <th className="text-altGray-500 px-6 py-3 text-xs">
+                          Status
+                        </th>
+                        <th className="text-altGray-500 py-3 px-6 text-xs">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="">
+                      {customerData.map(
+                        ({
+                          customerName,
+                          policyNo,
+                          totalClaimed,
+                          status,
+                          statusImg,
+                        }) => (
+                          <tr
+                            key={customerName}
+                            className="border-b-altGray-200 border-b"
+                          >
+                            <td className="flex items-center gap-3 px-6 py-4">
+                              <span className="text-xs font-medium text-altGray-900">
+                                {customerName}
+                              </span>
+                            </td>
+                            <td className="px-6 py-4 text-xs text-altGray-700">
+                              {policyNo}
+                            </td>
+                            <td className="px-6 py-4 text-xs text-altGray-700">
+                              {totalClaimed}
+                            </td>
+                            <td className="px-6 py-4">
+                              <div
+                                className={`flex w-fit items-center justify-center gap-[8px] rounded-2xl px-2 ${
+                                  status === "active"
+                                    ? "bg-[#ECFDF3] text-[0.63rem] text-[#027A48]"
+                                    : status === "inactive"
+                                    ? "bg-[#FFFAEB] text-[0.75rem] text-[#B54708]"
+                                    : "bg-[#FEF3F2] text-[0.75rem] text-[#B42318]"
+                                }`}
+                              >
+                                <Image
+                                  src={statusImg}
+                                  alt="notifications"
+                                  className="rounded-full"
+                                />
+                                <span className="capitalize">{status}</span>
+                              </div>
+                            </td>
+                            <td className=" px-6 py-4 text-sm font-medium">
+                              <button className="w-full  text-accent">
+                                Select
+                              </button>
+                            </td>
+                          </tr>
+                        ),
+                      )}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -166,7 +274,7 @@ export default function Claim() {
             </div>
             <Image src={cashHand} alt="" className="" />
           </div>
-          <div className="mx-auto my-[1.875rem] mt-5">
+          <div className="my-[1.875rem] mt-5">
             <div className="flex w-full justify-between gap-3">
               <div className="shadow-textFilter flex flex-1 items-center gap-2 rounded-lg border border-altGray-300 bg-white px-[0.875rem] py-[0.13rem]">
                 <Image src={search} alt="cheveron down icon" />
@@ -184,7 +292,7 @@ export default function Claim() {
               </div>
             </div>
           </div>
-          <div className="mx-auto flex flex-col gap-4 rounded-xl bg-white">
+          <div className="flex flex-col gap-4 rounded-xl bg-white">
             {/* table */}
             <div className="">
               <table className="w-full text-left">
